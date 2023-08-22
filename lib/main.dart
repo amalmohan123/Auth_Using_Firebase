@@ -1,5 +1,7 @@
 
+
 import 'package:fire_auth/view/loginpage/loginpage.dart';
+import 'package:fire_auth/view/sign_up_page/sign_up.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,55 +1,44 @@
 import 'package:fire_auth/helpers/colors.dart';
-import 'package:fire_auth/view/sign_up_page/sign_up.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class Loginpage extends StatelessWidget {
-  const Loginpage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List images = [
+      "asset/Image/g.webp",
+      "asset/Image/f.png",
+      "asset/Image/x.webp",
+    ];
+
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: ConstColors.loginBackgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.only(top: 60),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 130),
-                child: SizedBox(
-                  width: 400,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Hello",
-                        style: GoogleFonts.acme(
-                          fontSize: 60,
-                          color: const Color.fromARGB(255, 39, 0, 122),
-                        ),
+              Container(
+                width: w,
+                height: h * 0.33,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(
+                        "asset/Image/student_fire_new-removebg.png",
                       ),
-                      Text(
-                        "Welcome",
-                        style: GoogleFonts.acme(
-                          fontSize: 60,
-                          color: ConstColors.loginPageText,
-                        ),
-                      ),
-                      Text(
-                        "Sign into your account",
-                        style: GoogleFonts.acme(
-                            fontSize: 20,
-                            color: ConstColors.loginPageText,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ],
-                  ),
+                      fit: BoxFit.cover),
                 ),
               ),
-              const SizedBox(height: 35),
+              const SizedBox(
+                height: 60,
+              ),
               Container(
+                margin: const EdgeInsets.only(right: 20, left: 20),
                 decoration: BoxDecoration(
                   color: ConstColors.loginBackgroundColor,
                   borderRadius: BorderRadius.circular(30),
@@ -65,14 +54,12 @@ class Loginpage extends StatelessWidget {
                 ),
                 child: TextFormField(
                   decoration: InputDecoration(
-                    hintText: 'Username',
-                    hintStyle: TextStyle(),
+                    hintText: 'Your email id',
+                    // prefixIcon: Icon(Icons.mail,color: Colors.blueAccent,),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: const BorderSide(
-                        color: ConstColors.loginBackgroundColor,
-                        width: 1.5,
-                      ),
+                          color: ConstColors.loginBackgroundColor, width: 1.5),
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -82,6 +69,7 @@ class Loginpage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Container(
+                margin: const EdgeInsets.only(right: 20, left: 20),
                 decoration: BoxDecoration(
                   color: ConstColors.loginBackgroundColor,
                   borderRadius: BorderRadius.circular(30),
@@ -98,6 +86,7 @@ class Loginpage extends StatelessWidget {
                 child: TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Password',
+                    // prefixIcon: Icon(Icons.password,color: Colors.blueAccent,),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: const BorderSide(
@@ -109,20 +98,7 @@ class Loginpage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(),
-                  ),
-                  const Text(
-                    'Forgot your Password?',
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 36),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
@@ -142,7 +118,7 @@ class Loginpage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: const Text(
-                    'Sign in',
+                    'Sign up',
                     style: TextStyle(
                         color: ConstColors.loginPageText,
                         fontWeight: FontWeight.bold,
@@ -150,29 +126,51 @@ class Loginpage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 50),
-              RichText(
+                    const SizedBox(height: 20),
+                RichText(
                 text: TextSpan(
-                  text: "Don't have an account?",
+                  text: "Have an account?",
                   style: const TextStyle(
-                      color: Color.fromARGB(255, 77, 100, 105), fontSize: 18),
+                      color: ConstColors.blackColor, fontSize: 15),
                   children: [
                     TextSpan(
-                        text: ' Create',
+                        text: '  Go back',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: ConstColors.blackColor,
                             fontSize: 18),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignUpPage(),
-                              ),
-                            );
+                            Navigator.of(context).pop();
                           })
                   ],
+                ),
+              ),
+              
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                'Sign up using on the following methods.',
+                style: TextStyle(
+                  color: ConstColors.blackColor,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Wrap(
+                children: List.generate(
+                  3,
+                  (index) => Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage(
+                        images[index],
+                      ),
+                    ),
+                  ),
                 ),
               )
             ],
