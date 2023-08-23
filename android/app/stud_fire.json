@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "343424835522",
+    "project_id": "auth-student-list",
+    "storage_bucket": "auth-student-list.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343424835522:android:1fcc3ff48f2907ece3405b",
+        "android_client_info": {
+          "package_name": "com.example.fire_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343424835522-3ec5enrusn9otlqfd205cqgcimnrsaji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBES0YJwi8IO5prhYfatMLCWIuATR0LskM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343424835522-3ec5enrusn9otlqfd205cqgcimnrsaji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

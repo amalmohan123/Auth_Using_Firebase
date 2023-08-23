@@ -80,7 +80,7 @@ class SignUpPage extends StatelessWidget {
                       offset: const Offset(1, 1),
                       color: const Color.fromARGB(255, 114, 193, 174)
                           .withOpacity(.8),
-                    )
+                    ),
                   ],
                 ),
                 child: TextFormField(
@@ -99,7 +99,7 @@ class SignUpPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 36),
-              Container(
+              Container( 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   gradient: const LinearGradient(
@@ -126,27 +126,27 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ),
               ),
-                    const SizedBox(height: 20),
-                RichText(
+              const SizedBox(height: 20),
+              RichText(
                 text: TextSpan(
                   text: "Have an account?",
                   style: const TextStyle(
                       color: ConstColors.blackColor, fontSize: 15),
                   children: [
                     TextSpan(
-                        text: '  Go back',
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: ConstColors.blackColor,
-                            fontSize: 18),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.of(context).pop();
-                          })
+                      text: '  Go back',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: ConstColors.blackColor,
+                          fontSize: 18),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.of(context).pop();
+                        },
+                    )
                   ],
                 ),
               ),
-              
               const SizedBox(
                 height: 20,
               ),
